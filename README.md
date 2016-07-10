@@ -1,5 +1,5 @@
 # ReactNative102
-Repository for the first workshop in react-native
+Repository for the second workshop in react-native: Components
 
 ## Getting Started. React Native Tools
 Follow the instructions in the [react native website](https://facebook.github.io/react-native/docs/getting-started.html),
@@ -8,13 +8,8 @@ in order to install the packages needed to run react native apps
 You can install the packages to build and run the app for android
 (for MacOSX, Linux and Windows OSes) and/or for iOS (MacOSX only)
 
- Should you encounter any problem, please contact me at jserra@naradarobotics.com
- or in person at my workplace
 
-
-## ReactNative101 app
-
-### With Git
+### Installation With Git
 
 Follow these simple instructions:
 
@@ -24,6 +19,19 @@ Follow these simple instructions:
   > npm install
 ```
 
-#### Running Application
+#### Running Application in iOS
 
-You can read the README.md of the application ReactNative101 guru [Jserranr](https://github.com/jserranr/ReactNative101)
+```
+  > cd ReactNative102
+  > react-native run-ios
+```
+
+#### Running Application in Android
+
+Start your Android Virtual Device.
+
+Once you have it 100% running:
+```
+  > cd ReactNative102
+  > react-native run-android
+```
