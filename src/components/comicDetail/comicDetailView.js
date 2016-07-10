@@ -8,6 +8,7 @@ import {
     Image
 } from 'react-native';
 
+import Swiper from 'react-native-swiper';
 import styles from './comicDetailViewStyle';
 
 
@@ -17,7 +18,13 @@ class ComicDetailView extends Component {
     }
 
     render() {
-        return null;
+      const { passProps } = this.props.route;
+      return (
+        <View key={passProps.comic.id} style={styles.container}>
+          <Image source={{uri: `${passProps.comic.thumbnail.path}.jpg`}}
+          style={styles.image} />
+        </View>
+      );
     }
 }
 

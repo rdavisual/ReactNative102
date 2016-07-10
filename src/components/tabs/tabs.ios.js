@@ -13,10 +13,26 @@ const iconGame3 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAAD
 class Tabs extends Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            selectedTab: 'Dashboard'
+        };
     }
 
     render() {
-        return null;
+        return (
+          <TabBarIOS style={{backgroundColor: '#ffffff'}} >
+              <TabBarIOS.Item
+                  title="Heroes"
+                  selected={this.state.selectedTab === 'Heroes2'}
+                  icon={{uri: iconGame3, scale:3 }}>
+
+                  <View  style={{backgroundColor: 'rgba(0,0,0,.8)', flex: 1}}>
+                      <Text style={{marginTop:50, textAlign: 'center', color: 'red' }}>ola q ase</Text>
+                  </View>
+              </TabBarIOS.Item>
+          </TabBarIOS>
+        );
     }
 }
 
