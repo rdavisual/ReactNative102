@@ -6,10 +6,11 @@ import {
     Navigator,
     TouchableHighlight
 } from 'react-native';
-
+import styles from '../heroes/heroesViewStyle';
 import Login from '../login/loginView';
 import Tabs from '../tabs/tabs';
 import ComicDetailView from '../comicDetail/comicDetailView';
+import HeroesView from '../heroes/heroesView';
 
 const NavigatorBarRouterMapper = {
     LeftButton: (route, navigator, index) => {
@@ -17,7 +18,7 @@ const NavigatorBarRouterMapper = {
             return null;
         }
         return (
-            <TouchableHighlight> // Add back navigation functionality
+            <TouchableHighlight onPress={() => navigator.pop() }>
                 <Text style={{marginTop: 10, marginLeft: 20, color: '#007AFF'}}>Back</Text>
             </TouchableHighlight>
         );
@@ -43,9 +44,18 @@ class App extends Component {
             return (
                 <Login {...route.props} navigator={navigator} route={route} />
             );
-        // TODO: Add Dashboard and ComicDetailView
-        default:
-            return null;
+        case 'HeroesView':
+            return (
+                <HeroesView {...route.props} navigator={navigator} route={route} />
+            );
+        case 'Dashboard':
+            return (
+                <Tabs {...route.props} navigator={navigator} route={route} />
+            );
+        case 'Details':
+            return (
+                <ComicDetailView {...route.props} navigator={navigator} route={route} />
+            );
         }
     }
     render() {
@@ -58,7 +68,7 @@ class App extends Component {
                   if (route.sceneConfig) {
                       return route.sceneConfig;
                   }
-                  return Navigator.SceneConfigs.FloatFromBottom;    // TODO: Change the animation type
+                  return Navigator.SceneConfigs.FloatFromRight;    // TODO: Change the animation type
               }}
               navigationBar={
                   <Navigator.NavigationBar routeMapper={NavigatorBarRouterMapper} />

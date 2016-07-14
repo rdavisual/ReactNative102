@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text
+    Text,
+    TouchableHighlight
 } from 'react-native';
 
 import styles from './heroesViewStyle';
 
 class HeroesView extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render () {
-        return null;
+        return (
+            <View>
+                <Text style={{marginTop:50}}>un texto</Text>
+            </View>
+        );
     }
 }
 

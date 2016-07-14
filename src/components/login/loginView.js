@@ -11,8 +11,12 @@ import {
 import styles from './loginViewStyle';
 
 class loginView extends Component {
+    constructor(props) {
+        super(props);
+    }
 
   onLogin() {
+    //   this.prueba();
     Alert.alert('Entrada','¿estas seguro?', [
       {
         text: 'Sí',
@@ -23,9 +27,15 @@ class loginView extends Component {
       } // TODO: Add another option to check how the alert modifies its view
     ]);
   }
+
   accept() {
     // TODO: replace current page into the Dashboard page using this.props.navigator
-    console.log('accept');
+    // console.log('accept');
+    this.props.navigator.replace({
+        title: 'Dashboard',
+        name: 'Dashboard',
+        passProps: {}
+    });
   }
   cancel() {
       console.log('cancel');

@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  DrawerLayoutAndroid,
-  ActivityIndicator,
-  ToolbarAndroid,
-  ViewPagerAndroid
+  ScrollView
 } from 'react-native';
 
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
@@ -18,7 +12,19 @@ class Tabs extends Component{
         super(props);
     }
     render() {
-        return null;
+        return (
+            <ScrollableTabView
+                style={{marginTop: 20}}
+                initialPage={0}
+                renderTabBar={() => <ScrollableTabBar />} >
+                <ScrollView tabLabel='Dashboard'>
+                    <DashboardView  navigator={this.props.navigator} />
+                </ScrollView>
+                <ScrollView tabLabel='Heroes'>
+                    <HeroesView  navigator={this.props.navigator} />
+                </ScrollView>
+            </ScrollableTabView>
+        );
     }
 }
 

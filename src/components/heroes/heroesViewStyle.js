@@ -6,6 +6,16 @@ const style = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'rgba(50,255,0,.5)',
     },
+    container2: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: 'rgba(250,155,20,.9)',
+    },
+    container3: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: 'rgba(100,10,200,.8)',
+    },
     title: {
         marginTop: 100,
         fontSize: 25,

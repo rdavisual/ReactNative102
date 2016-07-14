@@ -40,16 +40,21 @@ class DashboardView extends Component {
         });
     }
 
-    onComicPressed(title, count) {
+    onComicPressed(comic, count) {
       // TODO: Add navigation to Details page passing the comics list
       // and the selected index
+      this.props.navigator.push({
+        name: 'Details',
+        title: comic.title,
+        passProps: { comic , index: count }
+      });
     }
 
     renderComic(comic) {
       this.countComic = this.countComic+1;
       let count = this.countComic-1;
       return (
-        <TouchableHighlight onPress={() => this.onComicPressed(comic.title, count)} >
+        <TouchableHighlight onPress={() => this.onComicPressed(comic, count)} >
           <Image source={{uri: `${comic.thumbnail.path}.jpg`}}  style={styles.backgroundImage}>
             <View style={styles.rightContainer} >
               <Text style={styles.title}>{comic.name}</Text>
